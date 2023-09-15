@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Касса магазина - Добавить покупку</title>
+    <link rel="stylesheet" type="text/css" href="static/styles.css">
+</head>
+<body>
+<header>
+    <h1>Касса магазина</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="/">Все покупки</a></li>
+        <li><a href="#">Добавить покупку</a></li>
+    </ul>
+</nav>
+
+<main>
+    <h2>Добавить покупку</h2>
+    <h3>{{ messege }}</h3>
+    <form method="POST" action="/add">
+        <label for="product-name">Название товара:</label>
+        <input type="text" id="product-name" name="product-name">
+
+        <label for="price">Цена:</label>
+        <input type="text" id="price" name="price">
+
+        <label for="quantity">Количество:</label>
+        <input type="number" id="quantity" name="quantity">
+
+        <input type="submit" value="Добавить покупку">
+    </form>
+</main>
+
+<footer>
+    <p>© 2022 Касса магазина. Все права защищены.</p>
+</footer>
+</body>
+</html>
