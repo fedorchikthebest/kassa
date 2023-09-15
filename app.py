@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+from data.db_session import global_init
 
 app = Flask(__name__)
 
@@ -19,4 +20,5 @@ def add():
     return render_template('add.html', messege='')
 
 
+global_init('db.db')
 app.run('127.0.0.1', port=5222)
