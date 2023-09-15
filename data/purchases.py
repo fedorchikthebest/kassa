@@ -12,6 +12,3 @@ class Purchases(SqlAlchemyBase):
     name = sqlalchemy.Column(sqlalchemy.String, nullable=True)
     count = sqlalchemy.Column(sqlalchemy.Integer, nullable=True)
     cost = sqlalchemy.Column(sqlalchemy.Integer, nullable=True)
-    check_id = sqlalchemy.Column(sqlalchemy.Integer)
-
-    user = orm.relationship('User')

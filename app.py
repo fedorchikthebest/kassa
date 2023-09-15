@@ -20,5 +20,5 @@ def add():
     return render_template('add.html', messege='')
 
 
-global_init('db.db')
+global_init('./db/db.db')
 app.run('127.0.0.1', port=5222)
