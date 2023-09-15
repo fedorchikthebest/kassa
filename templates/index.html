@@ -25,16 +25,13 @@
             <th>Цена</th>
             <th>Количество</th>
         </tr>
+        {% for i in puchases %}
         <tr>
-            <td>Товар 1</td>
-            <td>100 руб.</td>
-            <td>2</td>
+            <td>{{ i.name }}</td>
+            <td>{{ i.cost }}</td>
+            <td>{{ i.count }}</td>
         </tr>
-        <tr>
-            <td>Товар 2</td>
-            <td>200 руб.</td>
-            <td>1</td>
-        </tr>
+        {% endfor %}
         <!-- Добавьте дополнительные строки для каждой покупки -->
     </table>
 </main>
