@@ -13,6 +13,6 @@ def add_purchase(purchase_name, count, cost):
     db_sess.close()
 
 
-def get_purchases_from_check():
+def get_purchases():
     db_sess = db_session.create_session()
     return db_sess.query(Purchases).all()
