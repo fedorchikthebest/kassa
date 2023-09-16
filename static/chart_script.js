@@ -2,19 +2,19 @@ const $grafica = document.querySelector("#chart");
 let response = await fetch("/charts/data");
 let response_data = await response.json()
 const tags = response_data.tags
-const dataSales2020 = {
+const dataSales = {
     label: "Количество проданных товаров",
     data: response_data.data,
     backgroundColor: 'rgba(54, 162, 235, 0.2)',
     borderColor: 'rgba(54, 162, 235, 1)',
     borderWidth: 1,
 };
-new Chart($grafica, {
+let chart = new Chart($grafica, {
     type: 'bar',
     data: {
         labels: tags,
         datasets: [
-            dataSales2020,
+            dataSales,
         ]
     },
     options: {
@@ -27,3 +27,15 @@ new Chart($grafica, {
         },
     }
 });
+
+
+async function charts_updater(){
+    let response = await fetch("/charts/data");
+    let response_data = await response.json()
+    chart.data.labels = response_data.tags
+    chart.data.datasets[0].data = response_data.data
+    chart.update()
+}
+
+
+let timerId = setInterval(charts_updater, 5000);
