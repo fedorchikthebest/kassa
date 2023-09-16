@@ -12,3 +12,4 @@ class Purchases(SqlAlchemyBase):
     name = sqlalchemy.Column(sqlalchemy.String, nullable=True)
     count = sqlalchemy.Column(sqlalchemy.Integer, nullable=True)
     cost = sqlalchemy.Column(sqlalchemy.Integer, nullable=True)
+    purchase_date = sqlalchemy.Column(sqlalchemy.DateTime, default=datetime.datetime.now)
