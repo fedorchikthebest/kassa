@@ -15,4 +15,6 @@ def add_purchase(purchase_name, count, cost):
 
 def get_purchases():
     db_sess = db_session.create_session()
-    return db_sess.query(Purchases).all()
+    ans = db_sess.query(Purchases).all()
+    db_sess.close()
+    return ans
